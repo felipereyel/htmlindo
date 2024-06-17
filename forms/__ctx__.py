@@ -8,7 +8,7 @@ form_read_template = """
 
         <input type="text" name="field" class="text-slate-600 w-96 mt-4 px-2 py-1 border border-slate-600 rounded shadow-md" placeholder="{placeholder}"></input>
 
-        <input type="submit" class="mt-2 px-4 py-1 bg-blue-600 hover:bg-sky-100 hover:text-sky-900 text-white rounded shadow-md" value="send"></input>
+        <button type="submit" class="mt-2 px-4 py-1 bg-blue-600 hover:bg-sky-100 hover:text-sky-900 text-white rounded shadow-md" value="send">Send</button>
 
     </form>
 """
@@ -18,7 +18,7 @@ form_display_template = """
         
         <p>{message}</p>
 
-        <input type="submit" class="mt-2 px-4 py-1 bg-blue-600 hover:bg-sky-100 hover:text-sky-900 text-white rounded shadow-md" value="send"></input>
+        <button type="submit" class="mt-2 px-4 py-1 bg-blue-600 hover:bg-sky-100 hover:text-sky-900 text-white rounded shadow-md" value="send">Next</button>
         
     </form>
 """
