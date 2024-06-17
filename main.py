@@ -15,7 +15,8 @@ def main() -> flask.Flask:
             if not form:
                 return
 
-            form.run(ws)
+            with forms.Context(ws) as ctx:
+                form.run(ctx)
         finally:
             ws.close(message="Done")
 
