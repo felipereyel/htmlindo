@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.6"
+        integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/ws.js"></script>
+</head>
+
+<body id="body" class="bg-slate-900 text-white max-w-4xl my-0 mx-auto h-screen">
+    <div id="pform" hx-ext="ws" ws-connect="/ws" class="h-full flex flex-col justify-center items-center">
+        <form id="aform" ws-send
+            class="text-white text-center px-4 py-2 bg-blue-600 hover:bg-sky-100 hover:text-sky-900 border border-slate-600 rounded shadow-md cursor-pointer">
+            <input class="invisible"></input>
+            <input type="submit"></input>
+        </form>
+    </div>
+</body>
+
+</html>
