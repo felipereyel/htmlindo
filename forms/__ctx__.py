@@ -6,7 +6,7 @@ form_read_template = """
         
         <label for="field">{label}</label>
 
-        <input type="text" name="field" class="text-slate-600 w-96 mt-4 px-2 py-1 border border-slate-600 rounded shadow-md" placeholder="{placeholder}"></input>
+        <input type="{type}" name="field" class="text-slate-600 w-96 mt-4 px-2 py-1 border border-slate-600 rounded shadow-md" placeholder="{placeholder}"></input>
 
         <button type="submit" class="mt-2 px-4 py-1 bg-blue-600 hover:bg-sky-100 hover:text-sky-900 text-white rounded shadow-md" value="send">Send</button>
 
@@ -53,7 +53,18 @@ class Context:
         self.ws.send(message)
 
     def read(self, label: str, placeholder: str = ""):
-        form = form_read_template.format(label=label, placeholder=placeholder)
+        form = form_read_template.format(
+            placeholder=placeholder, label=label, type="text"
+        )
+        self._send(form)
+
+        data = self._rcv()
+        return data["field"]
+
+    def read_number(self, label: str, placeholder: str = ""):
+        form = form_read_template.format(
+            placeholder=placeholder, label=label, type="number"
+        )
         self._send(form)
 
         data = self._rcv()
